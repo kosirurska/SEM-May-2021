@@ -2,7 +2,7 @@
 
 
 #reading in data
-afdp <- read.table("afdp.dat", header=FALSE)
+afdp <- read.table("R Script and data files/afdp.dat", header=FALSE)
 varnames <-c("id","coa","age","gen","stress","emotion","negaff","peer")
 names(afdp)<-varnames
 View(afdp)
@@ -35,3 +35,5 @@ model.3 <- 'peer ~ coa + gen + age + emotion + stress + negaff'
 fit <- sem(model.3, data=afdp, meanstructure=TRUE)
 summary(fit, standardized=TRUE, rsquare=TRUE)
 summary(fit, std.nox=TRUE, rsquare=TRUE)
+
+?sem
